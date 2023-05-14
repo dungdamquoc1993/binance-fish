@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 380px;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input {
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0 12px;
+    margin-bottom: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #4b8df8;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .remember-me input {
+    margin-right: 8px;
+  }
+  
+  .forgot-password {
+    margin-top: 8px;
+  }
+  
+  input {
+    width: 50vh;
+    height: 5vh;
+    border: none;
+    border-radius: 25px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/*Đường viền cong*/
+input {
+    border: 2px solid #dfe1e5;
+    border-radius: 20px;
+}
+
+input:hover, input:focus {
+    border: 2px solid #7289da;
+}
